@@ -1,0 +1,13 @@
+/* Exemple de style personnalisé pour améliorer la lisibilité et l'organisation */
+
+/* Pour les petits écrans, on peut adapter la navigation pour qu'elle devienne horizontale */
+@media (max-width: 767.98px) {
+    .nav-pills.flex-md-column {
+      flex-direction: row;
+      overflow-x: auto;
+    }
+    .nav-pills.flex-md-column .nav-item {
+      margin-right: 0.5rem;
+    }
+  }
+  

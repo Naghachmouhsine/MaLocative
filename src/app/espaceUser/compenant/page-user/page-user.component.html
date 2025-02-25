@@ -1,0 +1,99 @@
+<nav class="navbar navbar-expand-lg shadow-sm fixed-top"
+  [ngClass]="{'dark-mode': isDarkMode,'light-mode': !isDarkMode}">
+  <div class="container-fluid flex-column">
+
+    <!-- Première ligne : Photo de profil et bouton paramètres -->
+    <div class="d-flex w-100 justify-content-between align-items-center py-2">
+       <!-- Photo de Profil -->
+       <a class="navbar-brand d-flex align-items-center">
+        <img (click)="setActive('profile')"
+          src="https://static.vecteezy.com/system/resources/previews/022/123/337/large_2x/user-icon-profile-icon-account-icon-login-sign-line-vector.jpg"
+          alt="Logo" width="40" height="40" [ngClass]="{'profile-active': activeElement === 'profile'}"
+          class="rounded-circle me-2">
+      </a>
+      <div class="">
+        <button class="btn me-3 position-relative"
+        [ngClass]="{'btn-outline-light': activeElement !== 'recherche', 'btn-light': activeElement === 'recherche'}"
+        (click)="setActive('recherche')" (click)="openFilterModal()">
+        <i class="fas fa-search"></i> <span class="d-none d-sm-inline ms-1">بحث</span>
+      </button>
+        <!-- Bouton Paramètres -->
+        <button class="btn me-3"
+          [ngClass]="{'btn-outline-light': activeElement !== 'settings', 'btn-light': activeElement === 'settings'}"
+          (click)="setActive('settings')">
+          <i class="fas fa-cogs"></i>
+        </button>
+  
+        <button *ngIf="isAuth" class="btn btn-outline-danger" (click)="openLogoutModal()">
+          <i class="fas fa-sign-out-alt"></i>
+          <span class="d-none d-sm-inline">تسجيل الخروج</span>
+        </button>
+  
+        <button *ngIf="!isAuth" class="btn btn-outline-success" >
+          <i class="fas fa-sign-in-alt"></i>
+          <span class="d-none d-sm-inline">تسجيل الدخول</span>
+        </button>
+      </div>
+     
+
+    </div>
+
+    <!-- Deuxième ligne : Boutons et Icônes -->
+    <div class="d-flex w-100 align-items-center py-2 border-top justify-content-start">
+      <button class="btn me-3"
+        [ngClass]="{'btn-outline-light': activeElement !== 'home', 'btn-light': activeElement === 'home'}"
+        (click)="setActive('home')">
+        <i class="fas fa-home"></i> <span class="d-none d-sm-inline ms-1">الرئيسية</span>
+      </button>
+
+      <button class="btn me-3"
+        [ngClass]="{'btn-outline-light': activeElement !== 'add', 'btn-light': activeElement === 'add'}"
+        (click)="setActive('add')">
+        <i class="fas fa-plus-circle"></i> <span class="d-none d-sm-inline ms-1">إضافة</span>
+      </button>
+
+      <button class="btn me-3 position-relative"
+        [ngClass]="{'btn-outline-light': activeElement !== 'messages', 'btn-light': activeElement === 'messages'}"
+        (click)="setActive('messages')">
+        <i class="fas fa-envelope"></i> <span class="d-none d-sm-inline ms-1">الرسائل</span>
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">2</span>
+      </button>
+
+      <button class="btn me-3 position-relative"
+        [ngClass]="{'btn-outline-light': activeElement !== 'notifications', 'btn-light': activeElement === 'notifications'}"
+        (click)="setActive('notifications')">
+        <i class="fas fa-bell"></i> <span class="d-none d-sm-inline ms-1">الإشعارات</span>
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+      </button>
+
+    </div>
+
+  </div>
+</nav>
+
+
+<div [ngSwitch]="activeElement" class="container" style="margin-top: 200px;">
+  <app-settings *ngSwitchCase="'settings'"></app-settings>
+  <app-home *ngSwitchCase="'home'"></app-home>
+  <app-profil *ngSwitchCase="'profile'"></app-profil>
+  <app-ajouter-location *ngSwitchCase="'add'" ></app-ajouter-location>
+</div>
+
+
+<div class="modal fade"  [ngClass]="{'dark-modal':isDarkMode}" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="logoutModalLabel">Confirmer la Déconnexion</h5>
+          <button type="button" class="btn-close" (click)="closeLogoutModal()" data-bs-dismiss="modal"
+            aria-label="Fermer"></button>
+        </div>
+        <div class="modal-body">
+          Êtes-vous sûr de vouloir vous déconnecter ?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+          <button type="button" class="btn btn-danger" (click)="logOut()">Déconnexion</button>
+        </div>
+      </div>
+    </div>

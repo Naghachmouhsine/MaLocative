@@ -1,0 +1,99 @@
+<div class="container mt-4">
+    <div class="row">
+      <!-- Colonne de Navigation pour les catégories de paramètres -->
+      <div class="col-md-3 mb-3">
+        <ul class="nav nav-pills flex-md-column" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button 
+              class="nav-link active" 
+              id="general-tab" 
+              data-bs-toggle="pill" 
+              data-bs-target="#general" 
+              type="button" 
+              role="tab" 
+              aria-controls="general" 
+              aria-selected="true">
+              Général
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button 
+              class="nav-link" 
+              id="notifications-tab" 
+              data-bs-toggle="pill" 
+              data-bs-target="#notifications" 
+              type="button" 
+              role="tab" 
+              aria-controls="notifications" 
+              aria-selected="false">
+              Notifications
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button 
+              class="nav-link" 
+              id="appearance-tab" 
+              data-bs-toggle="pill" 
+              data-bs-target="#appearance" 
+              type="button" 
+              role="tab" 
+              aria-controls="appearance" 
+              aria-selected="false">
+              Apparence
+            </button>
+          </li>
+        </ul>
+      </div>
+  
+      <!-- Colonne de Contenu des Paramètres -->
+      <div class="col-md-9">
+        <div class="tab-content">
+          <!-- Onglet Général -->
+          <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="general-tab">
+            <h4>Paramètres Généraux</h4>
+            <p>Configurez ici les paramètres généraux de votre application.</p>
+            <div class="mb-3">
+              <label for="appTitle" class="form-label">Titre de l'Application</label>
+              <input type="text" class="form-control" id="appTitle" placeholder="Entrez le titre de l'application">
+            </div>
+            <!-- Ajoutez d'autres champs de configuration si nécessaire -->
+          </div>
+  
+          <!-- Onglet Notifications -->
+          <div class="tab-pane fade" id="notifications" role="tabpanel" aria-labelledby="notifications-tab">
+            <h4>Paramètres de Notifications</h4>
+            <p>Définissez comment et quand vous souhaitez recevoir des notifications.</p>
+            <div class="form-check form-switch mb-3">
+              <input class="form-check-input" type="checkbox" id="emailNotifications">
+              <label class="form-check-label" for="emailNotifications">Activer les notifications par email</label>
+            </div>
+            <div class="form-check form-switch mb-3">
+              <input class="form-check-input" type="checkbox" id="smsNotifications">
+              <label class="form-check-label" for="smsNotifications">Activer les notifications par SMS</label>
+            </div>
+            <!-- D'autres options de notifications peuvent être ajoutées ici -->
+          </div>
+  
+          <!-- Onglet Apparence -->
+          <div class="tab-pane fade" id="appearance" role="tabpanel" aria-labelledby="appearance-tab">
+            <h4>Paramètres d'Apparence</h4>
+            <p>Personnalisez l'apparence de l'application.</p>
+            <div class="mb-3">
+              <label for="themeSelect" class="form-label">Thème</label>
+              <select class="form-select" id="themeSelect">
+                <option value="light">Clair</option>
+                <option value="dark">Sombre</option>
+              </select>
+            </div>
+            <!-- Ajoutez d'autres options d'apparence si besoin -->
+          </div>
+        </div>
+  
+        <!-- Bouton pour Enregistrer les modifications -->
+        <div class="mt-3">
+          <button class="btn btn-primary">Enregistrer les modifications</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

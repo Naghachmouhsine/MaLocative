@@ -1,0 +1,39 @@
+<div class="container mt-4"  [ngClass]="{'dark-mode': isDarkMode}">
+    <div class="card shadow-lg">
+      <div class="card-header bg-primary text-white text-center">
+        <h4>تعديل الملف الشخصي</h4>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" dir="rtl">
+          
+          <div class="mb-3">
+            <label for="firstName" class="form-label">الاسم الشخصي</label>
+            <input type="text" class="form-control" id="firstName" formControlName="firstName" required>
+          </div>
+  
+          <div class="mb-3">
+            <label for="lastName" class="form-label">اسم العائلة</label>
+            <input type="text" class="form-control" id="lastName" formControlName="lastName" required>
+          </div>
+  
+          <div class="mb-3">
+            <label for="email" class="form-label">البريد الإلكتروني</label>
+            <input type="email" class="form-control" id="email" formControlName="email" >
+          </div>
+  
+          <div class="mb-3">
+            <label for="password" class="form-label">كلمة مرور جديدة</label>
+            <input type="password" class="form-control" id="password" formControlName="password" placeholder="أدخل كلمة مرور جديدة">
+          </div>
+  
+          <div class="d-grid">
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-save"></i> حفظ التعديلات
+            </button>              
+          </div>
+  
+        </form>
+      </div>
+    </div>
+  </div>
+  

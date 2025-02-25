@@ -1,0 +1,34 @@
+<div mat-dialog-content [ngClass]="{'dark-mode': isDarkMode}">
+    <h2 [ngStyle]="{'color': isDarkMode ? 'white' : 'black' }">Filtres de recherche</h2>
+    <form>
+        <div class="mb-3">
+            <label for="category" class="form-label">Catégorie</label>
+            <select id="category" class="form-select" name="category">
+                <option value="">Toutes les catégories</option>
+                <option value="category1">Catégorie 1</option>
+                <option value="category2">Catégorie 2</option>
+                <option value="category3">Catégorie 3</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="date" class="form-label">Date</label>
+            <input type="date" class="form-control" id="date" name="date">
+        </div>
+
+        <div class="mb-3">
+            <label for="status" class="form-label">Statut</label>
+            <select id="status" class="form-select" name="status">
+                <option value="">Tous les statuts</option>
+                <option value="active">Actif</option>
+                <option value="inactive">Inactif</option>
+            </select>
+        </div>
+
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary">Appliquer</button>
+            <button type="button" class="btn btn-secondary ms-2" data-bs-dismiss="modal"
+                (click)="closeFilterModal()">Annuler</button>
+        </div>
+    </form>
+</div>

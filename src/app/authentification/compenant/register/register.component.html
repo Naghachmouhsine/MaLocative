@@ -1,0 +1,27 @@
+<form id="form">
+  <div class="mb-3">
+    <input type="text" class="form-control" id="Firstname" placeholder="First Name" required>
+  </div>
+  <div class="mb-3">
+    <input type="text" class="form-control" id="Lastname" placeholder="Last Name" required>
+  </div>
+  <div class="mb-3">
+    <input type="email" class="form-control" id="email" placeholder="Email" required>
+  </div>
+  <div class="mb-3">
+    <input type="password" class="form-control" id="password" placeholder="mot de passe" required>
+  </div>
+  <div class="mb-3">
+    <input type="password" class="form-control" id="confirm-password" placeholder="Confirmez votre mot de passe" required>
+  </div>
+  <div class="d-grid gap-2 mb-3">
+    <button type="submit" class="btn btn-primary">S'inscrire</button>
+  </div>
+  <div class="text-center mb-3"  [ngStyle]="{'color' : isDarkMod ? 'white' : 'black' }"  >ou</div>
+  <div class="d-grid gap-2">
+    <button type="button" [ngClass]="{'btnGoogle' : isDarkMod }"  class="btn   d-flex align-items-center justify-content-center">
+      <img src="https://th.bing.com/th/id/OIP.HG6XtzIxf4Nbo_vZt8T3EAHaHa?rs=1&pid=ImgDetMain" alt="Google" width="20" class="me-2" />
+      Se connecter avec Google
+    </button>    
+  </div>
+</form>

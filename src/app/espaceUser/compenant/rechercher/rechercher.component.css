@@ -1,0 +1,25 @@
+.dark-mode {
+    background-color: #333; /* Fond sombre */
+    color: #fff; /* Texte blanc */
+}
+
+.dark-mode .form-label {
+    color: #ccc; /* Labels en gris clair */
+}
+
+.dark-mode .form-control,
+.dark-mode .form-select {
+    background-color: #444; /* Fond des inputs */
+    color: #fff; /* Texte blanc */
+    border: 1px solid #666; /* Bordures grises */
+}
+
+.dark-mode .btn-primary {
+    background-color: #007bff; /* Bouton bleu classique */
+    border-color: #0056b3;
+}
+
+.dark-mode .btn-secondary {
+    background-color: #555;
+    border-color: #444;
+}

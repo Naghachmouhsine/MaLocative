@@ -1,0 +1,46 @@
+.navbar {
+    /* background-color: #07c6f1 !important; */
+    z-index: 1000;
+}
+.profile-active {
+    box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.7);
+    border: 2px solid white;
+    transition: all 0.3s ease-in-out;
+  }
+  
+.light-mode{
+  background-color: #07c6f1;
+  color: white;
+}
+.dark-mode{
+ background-color: #2a2f43;
+ color: black;
+}
+
+
+/* Dark Mode pour le modal */
+.dark-modal .modal-content {
+  background-color: #333 !important;
+  color: white;
+}
+
+.dark-modal .modal-header {
+  background-color: #444 !important;
+  color: white;
+}
+
+.dark-modal .modal-footer {
+  background-color: #444 !important;
+}
+
+.dark-modal .btn-secondary {
+  background-color: #555;
+  border-color: #555;
+  color: white;
+}
+
+.dark-modal .btn-danger {
+  background-color: #e3342f;
+  border-color: #e3342f;
+  color: white;
+}
